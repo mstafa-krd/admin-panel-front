@@ -14,14 +14,12 @@ import UpdateTaskStates from "./components/userTasks/UpdateTaskStates";
 import ProtectedRoute from "./config/ProtectedRoutes";
 import NotFound from "./pages/NotFound/NotFound";
 import CheckAuth from "./config/CheckAuth";
-import LoginRedicrect from "./config/LoginRedicrect";
 
 function App() {
   return (
     <Routes>
-      <Route element={<LoginRedicrect />}>
-        <Route path="/login" element={<Login />} />
-      </Route>
+      <Route path="/login" element={<Login />} />
+
       <Route element={<CheckAuth />}>
         <Route path="dashboard" element={<DashBoard />}>
           <Route

@@ -11,7 +11,6 @@ User.propTypes = {
   buttonTitle: PropTypes.string.isRequired,
   state: PropTypes.string.isRequired,
 };
-
 export default function User(props) {
   const [data, setData] = useState({
     name: "",
