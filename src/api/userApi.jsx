@@ -1,4 +1,4 @@
-const mainApi = process.env.API;
+const mainApi = import.meta.env.VITE_API; // only when using vite you use  import.meta.env
 
 const loginApi = `${mainApi}/login`;
 const createUserApi = `${mainApi}/create`;

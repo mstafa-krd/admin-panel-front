@@ -1,4 +1,4 @@
-import User from '../user/user.js'
+import User from '../user/user'
 
 export default function NewUser() {
   return (

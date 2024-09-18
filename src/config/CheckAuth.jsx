@@ -2,8 +2,8 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import Loader from "../components/Loader/Loader";
-import { authApi } from "../api/AuthApi";
 import { UserContext } from "../context/userContext";
+import { authApi } from "../api/authApi";
 
 const CheckAuth = () => {
   const [auth, setAuth] = useState();
