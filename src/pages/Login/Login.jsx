@@ -24,32 +24,22 @@ export default function Login() {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     console.log(data);
-    try {
-      const response = await fetch(loginApi, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json", // Assuming JSON data
-          Accept: "application/json", // Optional, based on API response format
-        },
-        body: JSON.stringify(data),
-        credentials: "include", // Include credentials for cross-origin requests
-      });
 
-      if (!response.ok) {
-        throw new Error(`Network response was not ok: ${response.status}`);
-      }
-
-      const responseData = await response.json(); // Parse JSON response
-      console.log(responseData);
-      setUser(responseData.user);
-      setError(false);
-      if (response.status === 200) {
-        nav("/dashboard");
-      }
-    } catch (error) {
-      console.error("Login failed:", error);
-      setError(true); // Update error state
-    }
+    await axios
+      .post(loginApi, data, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        console.log(res);
+        setUser(res.data.user);
+        setError(false);
+        if (res.status === 200) {
+          nav("/dashboard");
+        }
+      })
+      .catch((e) => {
+      console.log(e)
+    })
   };
   return (
     <div className="container">
