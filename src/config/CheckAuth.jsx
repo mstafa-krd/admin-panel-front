@@ -8,12 +8,13 @@ import { authApi } from "../api/authApi.jsx";
 const CheckAuth = () => {
   const [auth, setAuth] = useState();
   const [loader, setLoader] = useState(true);
-  const { user, setUser } = useContext(UserContext);
+  const { user,setUser } = useContext(UserContext);
 
   useEffect(() => {
     axios
       .get(authApi, { withCredentials: true })
       .then((res) => {
+        console.log(res.data.user)
         setAuth(res.data);
         setUser(res.data.user);
         localStorage.setItem("user", true);
@@ -27,7 +28,7 @@ const CheckAuth = () => {
   console.log(user);
   return loader ? (
     <Loader />
-  ) : user ? (
+  ) : auth?.authenticated ? (
     <Outlet />
   ) : (
     <Navigate to="/login" />
