@@ -13,7 +13,6 @@ const CheckAuth = () => {
     axios
       .get(authApi, { withCredentials: true })
       .then(() => {
-        localStorage.setItem("user", true);
         setLoader(false);
       })
       .catch((err) => {

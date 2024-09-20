@@ -38,8 +38,10 @@ export default function Login() {
         }
       })
       .catch((e) => {
-      console.log(e)
-    })
+        setError(true);
+
+        console.log(e);
+      });
   };
   return (
     <div className="container">
