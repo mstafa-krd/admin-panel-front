@@ -23,6 +23,7 @@ export default function Login() {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+    console.log("data: " + data);
     try {
       const res = await axios.post(loginApi, data, {
         withCredentials: true,
