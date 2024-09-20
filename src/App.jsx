@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import DashBoard from "./pages/Dashboard/DashBoard";
+import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Users from "./components/Users/Users";
 import NewUser from "./components/NewUser/NewUser";
@@ -18,8 +19,8 @@ import CheckAuth from "./config/CheckAuth";
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
-
       <Route element={<CheckAuth />}>
         <Route path="dashboard" element={<DashBoard />}>
           <Route
