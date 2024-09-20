@@ -23,17 +23,17 @@ export default function Login() {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log(loginApi)
     try {
       const res = await axios.post(loginApi, data, {
         withCredentials: true,
       });
-    
-      setUser(res.data.user);
+
+      setUser(res.data?.user);
       setError(false);
       if (res.status === 200) {
         nav("/dashboard");
       }
+      setUser(res.data?.user);
     } catch (error) {
       setError(true);
       console.error("Login failed:", error.response.data.message);
