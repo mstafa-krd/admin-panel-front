@@ -11,19 +11,19 @@ export default function Profile() {
           <div className="profile-details">
             <div className="profile-item">
               <label className="profile-label">Name:</label>
-              <span className="profile-value">{user.user.name}</span>
+              <span className="profile-value">{user.name}</span>
             </div>
             <div className="profile-item">
               <label className="profile-label">Email:</label>
-              <span className="profile-value">{user.user.email}</span>
+              <span className="profile-value">{user.email}</span>
             </div>
             <div className="profile-item">
               <label className="profile-label">Role:</label>
-              <span className="profile-value">{user.user.role}</span>
+              <span className="profile-value">{user.role}</span>
             </div>
             <div className="profile-item">
               <label className="profile-label">Account Created:</label>
-              <span className="profile-value">{user.user.createdAt}</span>
+              <span className="profile-value">{user.createdAt}</span>
             </div>
           </div>
         </div>

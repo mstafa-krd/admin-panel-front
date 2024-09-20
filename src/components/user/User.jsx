@@ -126,7 +126,7 @@ export default function User(props) {
             Select user role:
           </h5>
           <div className="role">
-            {user.user.role !== "admin" && (
+            {user.role !== "admin" && (
               <label htmlFor="super-admin">
                 <input
                   onChange={onChangeHandler}

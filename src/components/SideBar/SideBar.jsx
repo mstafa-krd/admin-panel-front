@@ -16,8 +16,8 @@ import { UserContext } from "../../context/userContext";
 
 const SideBar = () => {
   const user = useContext(UserContext);
-  const role = user.role;
   console.log(user)
+  const role = user.user.role;
   console.log("role: " + role);
   const nav = useNavigate();
 
