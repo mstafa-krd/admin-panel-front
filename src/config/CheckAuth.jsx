@@ -25,7 +25,7 @@ const CheckAuth = () => {
         console.error("Error checking authentication status", err);
         setLoader(false);
       });
-  }, [setUser,user]);
+  }, [setUser]);
 
   return loader ? <Loader /> : auth ? <Outlet /> : <Navigate to="/login" />;
 };
