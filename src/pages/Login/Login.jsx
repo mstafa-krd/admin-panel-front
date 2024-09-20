@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { loginApi } from "../../api/userApi";
+import { UserContext } from "../../context/userContext";
+
 export default function Login() {
   const [data, setData] = useState({
     email: "",
     password: "",
   });
   const [error, setError] = useState(false);
+  const { setUser } = useContext(UserContext);
 
   const nav = useNavigate();
 
@@ -20,11 +23,12 @@ export default function Login() {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log(loginApi)
     try {
       const res = await axios.post(loginApi, data, {
         withCredentials: true,
       });
+    
+      setUser(res.data.user);
       setError(false);
       if (res.status === 200) {
         nav("/dashboard");
