@@ -8,7 +8,7 @@ import { authApi } from "../api/authApi.jsx";
 const CheckAuth = () => {
   const [auth, setAuth] = useState();
   const [loader, setLoader] = useState(true);
-  const { setUser } = useContext(UserContext);
+  const { user,setUser } = useContext(UserContext);
 
   useEffect(() => {
     axios
@@ -24,7 +24,7 @@ const CheckAuth = () => {
         setLoader(false);
       });
   }, [setUser]);
-  console.log(auth);
+  console.log(user);
   return loader ? (
     <Loader />
   ) : auth?.authenticated ? (
