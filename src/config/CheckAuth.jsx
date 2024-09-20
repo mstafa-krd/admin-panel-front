@@ -24,10 +24,10 @@ const CheckAuth = () => {
         setLoader(false);
       });
   }, [setUser]);
-  console.log("user : " + user);
+  console.log(auth);
   return loader ? (
     <Loader />
-  ) : auth?.user ? (
+  ) : user ? (
     <Outlet />
   ) : (
     <Navigate to="/login" />
