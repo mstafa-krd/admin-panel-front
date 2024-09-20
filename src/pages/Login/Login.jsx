@@ -27,7 +27,7 @@ export default function Login() {
       const res = await axios.post(loginApi, data, {
         withCredentials: true,
       });
-
+      console.log(res);
       setUser(res.data?.user);
       setError(false);
       if (res.status === 200) {
