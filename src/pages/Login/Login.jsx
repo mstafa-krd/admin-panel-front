@@ -24,21 +24,22 @@ export default function Login() {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     console.log(data);
-    try {
-      const res = await axios.post(loginApi, data, {
+
+    await axios
+      .post(loginApi, data, {
         withCredentials: true,
-      });
-      console.log(res);
-      setUser(res.data.user);
-      setError(false);
-      if (res.status === 200) {
-        nav("/dashboard");
-      }
-      setUser(res.data?.user);
-    } catch (error) {
-      setError(true);
-      console.error("Login failed:", error);
-    }
+      })
+      .then((res) => {
+        console.log(res);
+        setUser(res.data.user);
+        setError(false);
+        if (res.status === 200) {
+          nav("/dashboard");
+        }
+      })
+      .catch((e) => {
+      console.log(e)
+    })
   };
   return (
     <div className="container">
