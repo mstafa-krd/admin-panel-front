@@ -14,8 +14,7 @@
   padding: 20px;
   transition: width 0.3s;
   cursor: pointer;
-  position: fixed;
-  height: 200vh;
+
 }
 
 .sidebar-title {
@@ -55,6 +54,8 @@
 @media (max-width: 768px) {
   .sidebar {
     width: 80px;
+      position: fixed;
+  height: 200vh;
   }
 
   .sidebar-title,
