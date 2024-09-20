@@ -16,7 +16,7 @@ const CheckAuth = () => {
       .then((res) => {
         setLoader(false);
         setUser(res.data);
-        console.log(user)
+        console.log(user);
         if (user && localStorage.getItem("user")) {
           setAuth(true);
         }
@@ -25,7 +25,7 @@ const CheckAuth = () => {
         console.error("Error checking authentication status", err);
         setLoader(false);
       });
-  }, [user]);
+  }, [setUser,user]);
 
   return loader ? <Loader /> : auth ? <Outlet /> : <Navigate to="/login" />;
 };
