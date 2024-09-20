@@ -37,7 +37,7 @@ export default function Login() {
       setUser(res.data?.user);
     } catch (error) {
       setError(true);
-      console.error("Login failed:", error);
+      console.error("Login failed:", error.response.data.message);
     }
   };
   return (
