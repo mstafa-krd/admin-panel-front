@@ -8,13 +8,15 @@ import { authApi } from "../api/authApi.jsx";
 const CheckAuth = () => {
   const [loader, setLoader] = useState(true);
   const [auth, setAuth] = useState(false);
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     axios
       .get(authApi, { withCredentials: true })
-      .then(() => {
+      .then((res) => {
         setLoader(false);
+        setUser(res.data);
+        console.log(user)
         if (user && localStorage.getItem("user")) {
           setAuth(true);
         }
