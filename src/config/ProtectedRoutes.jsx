@@ -9,6 +9,7 @@ export default function ProtectedRoute({ allowedRoles }) {
   const user = useContext(UserContext);
 
   // Check if the user has one of the allowed roles
+  console.log(user)
   if (allowedRoles.includes(user.role)) {
     return <Outlet />;
   } else {
