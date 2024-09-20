@@ -1,4 +1,4 @@
-import User from "../user/user.jsx";
+import User from "../user/User.jsx";
 
 
 export default function UpdateUser() {
