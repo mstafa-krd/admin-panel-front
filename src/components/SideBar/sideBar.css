@@ -14,8 +14,7 @@
   padding: 20px;
   transition: width 0.3s;
   cursor: pointer;
-  position: fixed;
-
+  height: 100%;
 }
 
 .sidebar-title {
