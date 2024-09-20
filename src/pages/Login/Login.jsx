@@ -23,14 +23,12 @@ export default function Login() {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log(data);
 
     await axios
       .post(loginApi, data, {
         withCredentials: true,
       })
       .then((res) => {
-        console.log(res);
         setUser(res.data.user);
         setError(false);
         if (res.status === 200) {
