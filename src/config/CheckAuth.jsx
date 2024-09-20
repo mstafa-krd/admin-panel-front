@@ -8,11 +8,11 @@ import { authApi } from "../api/authApi.jsx";
 const CheckAuth = () => {
   const [auth, setAuth] = useState();
   const [loader, setLoader] = useState(true);
-  const { setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     axios
-      .get(authApi, { withCredentials: true })
+      .get(authApi, user, { withCredentials: true })
       .then((res) => {
         setAuth(res.data);
         setUser(res.data.user);
@@ -23,8 +23,8 @@ const CheckAuth = () => {
         console.error("Error checking authentication status", err);
         setLoader(false);
       });
-    }, [setUser]);
-    console.log(auth)
+  }, [setUser]);
+  console.log(auth);
   return loader ? (
     <Loader />
   ) : auth.authenticated ? (
