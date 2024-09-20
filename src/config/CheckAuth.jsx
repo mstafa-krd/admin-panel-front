@@ -17,14 +17,14 @@ const CheckAuth = () => {
         setAuth(res.data);
         setUser(res.data.user);
         localStorage.setItem("user", true);
-        console.log(auth)
         setLoader(false);
       })
       .catch((err) => {
         console.error("Error checking authentication status", err);
         setLoader(false);
       });
-  }, [setUser]);
+    }, [setUser]);
+    console.log(auth)
   return loader ? (
     <Loader />
   ) : auth.authenticated ? (
