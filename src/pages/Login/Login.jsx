@@ -29,7 +29,7 @@ export default function Login() {
         withCredentials: true,
       });
       console.log(res);
-      setUser(res.data?.user);
+      setUser(res.data.user);
       setError(false);
       if (res.status === 200) {
         nav("/dashboard");
@@ -37,7 +37,7 @@ export default function Login() {
       setUser(res.data?.user);
     } catch (error) {
       setError(true);
-      console.error("Login failed:", error.response.data.message);
+      console.error("Login failed:", error);
     }
   };
   return (
