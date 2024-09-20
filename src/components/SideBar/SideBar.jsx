@@ -17,13 +17,15 @@ import { UserContext } from "../../context/userContext";
 const SideBar = () => {
   const user = useContext(UserContext);
   const role = user.user.role;
+  console.log(user)
+  console.log("role: " + role);
   const nav = useNavigate();
 
   const logoutHandler = () => {
     axios
       .get(logoutApi, { withCredentials: true })
       .then(() => {
-        localStorage.removeItem("user")
+        localStorage.removeItem("user");
         nav("/login");
       })
       .catch((err) => {
