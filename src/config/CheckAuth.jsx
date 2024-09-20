@@ -24,7 +24,7 @@ const CheckAuth = () => {
         setLoader(false);
       });
   }, [setUser]);
-  console.log(auth);
+  console.log(user);
   return loader ? (
     <Loader />
   ) : user ? (
