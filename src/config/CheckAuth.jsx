@@ -27,7 +27,7 @@ const CheckAuth = () => {
   console.log(auth);
   return loader ? (
     <Loader />
-  ) : auth.authenticated ? (
+  ) : auth?.authenticated ? (
     <Outlet />
   ) : (
     <Navigate to="/login" />
