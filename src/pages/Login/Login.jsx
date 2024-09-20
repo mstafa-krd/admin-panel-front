@@ -32,6 +32,7 @@ export default function Login() {
         setUser(res.data.user);
         setError(false);
         if (res.status === 200) {
+          localStorage.setItem('user', true);
           nav("/dashboard");
         }
       })
