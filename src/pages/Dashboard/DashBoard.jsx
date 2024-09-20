@@ -5,7 +5,6 @@ export default function DashBoard() {
   return (
     <div>
       <SideBar />
-
       <Outlet />
     </div>
   );
