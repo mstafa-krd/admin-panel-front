@@ -8,11 +8,11 @@ import { authApi } from "../api/authApi.jsx";
 const CheckAuth = () => {
   const [auth, setAuth] = useState();
   const [loader, setLoader] = useState(true);
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
   useEffect(() => {
     axios
-      .get(authApi, user, { withCredentials: true })
+      .get(authApi, { withCredentials: true })
       .then((res) => {
         setAuth(res.data);
         setUser(res.data.user);
