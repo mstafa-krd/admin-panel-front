@@ -14,6 +14,7 @@ const CheckAuth = () => {
     axios
       .get(authApi, { withCredentials: true })
       .then((res) => {
+        console.log(res.data.user)
         setAuth(res.data);
         setUser(res.data.user);
         localStorage.setItem("user", true);
