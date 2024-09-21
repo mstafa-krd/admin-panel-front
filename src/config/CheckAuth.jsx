@@ -16,6 +16,7 @@ const CheckAuth = () => {
      .then((res) => {
        console.log("User Data:", res.data.user);
        console.log("Auth Status:", res.data.authenticated);
+       console.log("Cookies sent:", document.cookie); // Check for cookies
        setAuth(res.data);
        setUser(res.data.user);
      })
