@@ -29,7 +29,6 @@ export default function Login() {
         withCredentials: true,
       })
       .then((res) => {
-        setUser(res.data.user);
         setError(false);
         if (res.status === 200) {
           localStorage.setItem('user', true);
